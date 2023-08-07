@@ -1,15 +1,14 @@
-import React from "react"
-import { Outlet } from "react-router"
+import React from "react";
+import { Outlet } from "react-router";
+import Navbar from "./Navbar";
 
-function AppLayout()
-{
-
-    return(
+function AppLayout() {
+    return (
         <>
-        <h1>Тут должен быть AppLayout, но "его нет" :/</h1>
-        <Outlet />
+            <Navbar />
+            <Outlet />
         </>
-    )
+    );
 }
 
 export default AppLayout;

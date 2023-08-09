@@ -34,25 +34,25 @@ const Navbar = () => {
                 >
                     <Link
                         sx={{ color: "#fff", cursor: 'pointer' }}
-                        onClick={() => navigate("/gggg")}
+                        onClick={() => navigate("/")}
                     >
                         главная
                     </Link>
                     <Link
                         sx={{ color: "#fff", cursor: 'pointer' }}
-                        onClick={() => navigate("/gggg")}
+                        onClick={() => navigate("/movies")}
                     >
                         фильмы
                     </Link>
                     <Link
                         sx={{ color: "#fff", cursor: 'pointer' }}
-                        onClick={() => navigate("/gggg")}
+                        onClick={() => navigate("/")}
                     >
                         избранное
                     </Link>
                     <Link
                         sx={{ color: "#fff", cursor: 'pointer'}}
-                        onClick={() => navigate("/gggg")}
+                        onClick={() => navigate("/")}
                     >
                         контакты
                     </Link>

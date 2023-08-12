@@ -11,6 +11,7 @@ const Navbar = () => {
                 left: "0",
                 right: "0",
                 paddingTop: "1rem",
+                zIndex: '9999'
             }}
             className="container"
         >

@@ -11,7 +11,7 @@ function Movies(props) {
                 description={movie.attributes.movieDesc}
                 time={movie.attributes.movieTime}
                 price={movie.attributes.moviePrice}
-                img={movie.attributes.movieImg.data.attributes.url}
+                img={movie?.attributes?.movieImg?.data?.attributes.url}
             />
         );
     });
@@ -22,7 +22,7 @@ function Movies(props) {
                 display: "flex",
                 justifyContent: "center",
                 width: "100%",
-                height: "100vh",
+                minHeight: "100vh",
                 background:
                     "linear-gradient(45deg, rgba(0, 0, 0, 0.86) 1.30%, #8F1414 59.38%)",
             }}

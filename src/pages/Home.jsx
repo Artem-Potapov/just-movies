@@ -9,7 +9,7 @@ function Home() {
                 alignItems: "center",
                 justifyContent: "center",
                 width: "100%",
-                height: "100vh",
+                minHeight: "100vh",
                 background:
                     "linear-gradient(45deg, rgba(0, 0, 0, 0.86) 1.30%, #8F1414 59.38%)",
             }}

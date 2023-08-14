@@ -11,7 +11,7 @@ const Navbar = () => {
                 left: "0",
                 right: "0",
                 paddingTop: "1rem",
-                zIndex: '9999'
+                zIndex: "9999",
             }}
             className="container"
         >
@@ -31,28 +31,49 @@ const Navbar = () => {
                         maxWidth: "400px",
                         display: "flex",
                         justifyContent: "space-between",
+                        textDecoration: "none",
                     }}
                 >
                     <Link
-                        sx={{ color: "#fff", cursor: 'pointer' }}
+                        sx={{
+                            color: "#fff",
+                            cursor: "pointer",
+                            fontFamily: "'Rubik', sans-serif;",
+                            textDecoration: "none",
+                        }}
                         onClick={() => navigate("/")}
                     >
                         главная
                     </Link>
                     <Link
-                        sx={{ color: "#fff", cursor: 'pointer' }}
+                        sx={{
+                            color: "#fff",
+                            cursor: "pointer",
+                            fontFamily: "'Rubik', sans-serif;",
+                            textDecoration: "none",
+                        }}
                         onClick={() => navigate("/movies")}
                     >
                         фильмы
                     </Link>
                     <Link
-                        sx={{ color: "#fff", cursor: 'pointer' }}
+                        sx={{
+                            color: "#fff",
+                            cursor: "pointer",
+                            fontFamily: "'Rubik', sans-serif;",
+                            textDecoration: "none",
+                        }}
                         onClick={() => navigate("/")}
                     >
                         избранное
                     </Link>
                     <Link
-                        sx={{ color: "#fff", cursor: 'pointer'}}
+                        sx={{
+                            color: "#fff",
+                            cursor: "pointer",
+                            fontFamily: "'Rubik', sans-serif;",
+                            textDecoration: "none",
+                        }}
                         onClick={() => navigate("/")}
                     >
                         контакты

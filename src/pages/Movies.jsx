@@ -4,13 +4,14 @@ import MovieCard from "../components/molecules/MovieCard";
 
 function Movies(props) {
     const moviesArray = props.data.map((movie) => {
-        console.log(movie)
         return (
             <MovieCard
+                key={movie.id}
                 title={movie.attributes.movieTitle}
                 description={movie.attributes.movieDesc}
                 time={movie.attributes.movieTime}
                 price={movie.attributes.moviePrice}
+                img={movie.attributes.movieImg.data.attributes.url}
             />
         );
     });

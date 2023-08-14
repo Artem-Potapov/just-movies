@@ -73,10 +73,11 @@ function Home() {
                                 fontWeight: "600",
                                 fontSize: "18px",
                                 textTransform: "initial",
-                                background: "#A71A1A",
+                                background: "linear-gradient(90deg, #A71A1A 0%, #BB1616 100%);",
                                 boxShadow: "0px 4px 8px 0px #A71A1A",
                             }}
                             variant="contained"
+                            
                         >
                             Смотреть сейчас
                         </Button>

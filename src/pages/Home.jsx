@@ -36,6 +36,8 @@ function Home() {
                                 fontSize: "45px",
                                 fontWeight: "800",
                                 maxWidth: "470px",
+                                lineHeight: '1.75rem',
+                                paddingBottom: '1rem'
                             }}
                             component="h1"
                         >
@@ -55,6 +57,7 @@ function Home() {
                                 sx={{
                                     color: "#CD0B0B",
                                     fontSize: "inherit",
+                                    lineHeight: 'inherit',
                                     fontWeight: "inherit",
                                 }}
                             >
@@ -68,7 +71,7 @@ function Home() {
                         <Button
                             sx={{
                                 width: "100%",
-                                maxWidth: "400px",
+                                maxWidth: "350px",
                                 marginTop: "1.25rem",
                                 fontWeight: "600",
                                 fontSize: "18px",

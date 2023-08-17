@@ -10,7 +10,7 @@ const Navbar = () => {
                 position: "absolute",
                 left: "0",
                 right: "0",
-                paddingTop: "1rem",
+                padding: "1.5rem 0",
                 zIndex: "9999",
             }}
             className="container"
@@ -41,9 +41,9 @@ const Navbar = () => {
                             fontFamily: "'Rubik', sans-serif;",
                             textDecoration: "none",
                         }}
-                        onClick={() => navigate("/")}
+                        onClick={() => navigate("/home")}
                     >
-                        главная
+                        Главная
                     </Link>
                     <Link
                         sx={{
@@ -52,9 +52,20 @@ const Navbar = () => {
                             fontFamily: "'Rubik', sans-serif;",
                             textDecoration: "none",
                         }}
-                        onClick={() => navigate("/movies")}
+                        href="/movies"
                     >
-                        фильмы
+                        Фильмы
+                    </Link>
+                    <Link
+                        sx={{
+                            color: "#fff",
+                            cursor: "pointer",
+                            fontFamily: "'Rubik', sans-serif;",
+                            textDecoration: "none",
+                        }}
+                        href="/favorites"
+                    >
+                        Избранное
                     </Link>
                     <Link
                         sx={{
@@ -65,18 +76,7 @@ const Navbar = () => {
                         }}
                         onClick={() => navigate("/")}
                     >
-                        избранное
-                    </Link>
-                    <Link
-                        sx={{
-                            color: "#fff",
-                            cursor: "pointer",
-                            fontFamily: "'Rubik', sans-serif;",
-                            textDecoration: "none",
-                        }}
-                        onClick={() => navigate("/")}
-                    >
-                        контакты
+                        Контакты
                     </Link>
                 </Box>
             </Box>

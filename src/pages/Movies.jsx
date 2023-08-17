@@ -11,7 +11,7 @@ function Movies(props) {
                 description={movie.attributes.movieDesc}
                 time={movie.attributes.movieTime}
                 price={movie.attributes.moviePrice}
-                img={movie?.attributes?.movieImg?.data?.attributes.url}
+                img={movie?.attributes?.movieImg?.data}
             />
         );
     });

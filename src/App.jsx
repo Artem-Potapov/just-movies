@@ -10,8 +10,12 @@ import Movies from "./pages/Movies";
 import { useEffect, useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material";
 import axios from "axios";
+import Favorites from "./pages/Favorites";
 
 function App() {
+    const [movieData, setMovie] = useState([]);
+    const [favoritesData, setFavoritesData] = useState([])
+
     // THEME CREATION
     const theme = createTheme({
         typography: {
@@ -20,21 +24,26 @@ function App() {
         components: {
             MuiButton: {
                 styleOverrides: {
-                    fontFamily: "'Rubik', sans-serif"
-                }
-            }
-        }
+                    fontFamily: "'Rubik', sans-serif",
+                },
+            },
+        },
     });
 
-    const [data, setData] = useState([]);
-
     useEffect(() => {
-        async function implementAxios() {
+        async function getMovies() {
             axios
                 .get("http://localhost:1337/api/movies?populate=*")
-                .then((res) => setData(res.data.data));
+                .then((res) => setMovie(res.data.data));
         }
-        implementAxios();
+        getMovies();
+
+        async function getFavorites() {
+            axios
+                .get("http://localhost:1337/api/favorites?populate=*")
+                .then((res) => setFavoritesData(res.data.data));
+        }
+        getFavorites()
     }, []);
 
     const router = createBrowserRouter([
@@ -53,7 +62,11 @@ function App() {
                 },
                 {
                     path: "/movies",
-                    element: <Movies data={data} />,
+                    element: <Movies data={movieData} />,
+                },
+                {
+                    path: "/favorites",
+                    element: <Favorites data={favoritesData} />,
                 },
             ],
         },

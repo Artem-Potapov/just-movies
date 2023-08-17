@@ -11,10 +11,20 @@ import { useEffect, useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material";
 import axios from "axios";
 import Favorites from "./pages/Favorites";
+import useGetAxios from "./hooks/useGetAxios";
 
 function App() {
-    const [movieData, setMovie] = useState([]);
-    const [favoritesData, setFavoritesData] = useState([])
+    const {
+        data: moviesData,
+        loading: moviesLoading,
+        error: moviesError,
+    } = useGetAxios("http://localhost:1337/api/movies?populate=*");
+
+    const {
+        data: favoritesData,
+        loading: favoritesLoading,
+        error: favoritesError,
+    } = useGetAxios("http://localhost:1337/api/favorites?populate=*");
 
     // THEME CREATION
     const theme = createTheme({
@@ -29,22 +39,6 @@ function App() {
             },
         },
     });
-
-    useEffect(() => {
-        async function getMovies() {
-            axios
-                .get("http://localhost:1337/api/movies?populate=*")
-                .then((res) => setMovie(res.data.data));
-        }
-        getMovies();
-
-        async function getFavorites() {
-            axios
-                .get("http://localhost:1337/api/favorites?populate=*")
-                .then((res) => setFavoritesData(res.data.data));
-        }
-        getFavorites()
-    }, []);
 
     const router = createBrowserRouter([
         {
@@ -62,11 +56,11 @@ function App() {
                 },
                 {
                     path: "/movies",
-                    element: <Movies data={movieData} />,
+                    element: <Movies error={moviesError} loading={moviesLoading} data={moviesData}/>,
                 },
                 {
                     path: "/favorites",
-                    element: <Favorites data={favoritesData} />,
+                    element: <Favorites data={favoritesData} loading={favoritesLoading}/>,
                 },
             ],
         },

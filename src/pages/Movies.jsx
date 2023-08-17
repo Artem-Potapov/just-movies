@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, TextField, Typography } from "@mui/material";
 import MovieCard from "../components/molecules/MovieCard";
 
 function Movies(props) {
-    const moviesArray = props.data.map((movie) => {
+    const moviesArray = props?.data?.map((movie) => {
         return (
             <MovieCard
                 key={movie.id}
@@ -33,7 +33,11 @@ function Movies(props) {
                 }}
                 className="container"
             >
-                {moviesArray}
+                {props?.loading && (
+                    <Typography component="h1" sx={{color: 'white'}}>loading...</Typography>
+                )}
+                {props.error && (<Typography component='p'>Возникла ошибка</Typography>)}
+                   {moviesArray}
             </Box>
         </Box>
     );

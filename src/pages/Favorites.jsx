@@ -4,7 +4,7 @@ import FavoriteCard from "../components/molecules/FavoriteCard";
 import { useNavigate } from "react-router";
 
 function Favorites(props) {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const favoritesArray = props?.data?.map((fav) => {
         return (
@@ -43,10 +43,13 @@ function Favorites(props) {
                             justifyContent: "center",
                             alignItems: "center",
                             flexDirection: "column",
-                            height: '80vh'
+                            height: "80vh",
                         }}
                     >
-                        <Typography component="h5" sx={{fontSize: '24px', textAlign: 'center'}}>
+                        <Typography
+                            component="h5"
+                            sx={{ fontSize: "24px", textAlign: "center" }}
+                        >
                             У вас нет фильмов в избранных. Здесь вы сможете
                             перейти на страницу со всеми любимыми эпизодами.
                         </Typography>
@@ -63,11 +66,16 @@ function Favorites(props) {
                                 boxShadow: "0px 4px 8px 0px #A71A1A",
                             }}
                             variant="contained"
-                            onClick={() => navigate('/movies')}
+                            onClick={() => navigate("/movies")}
                         >
                             Смотреть сейчас
                         </Button>
                     </Box>
+                )}
+                {props?.loading && (
+                    <Typography component="h1" sx={{ color: "white" }}>
+                        loading...
+                    </Typography>
                 )}
                 {favoritesArray}
             </Box>
